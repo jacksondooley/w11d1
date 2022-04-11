@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./application.css" />
+  <script src="./bundle.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1>Minesweeper</h1>
+  <p>
+    Click to explore tile.
+    <br>
+    Alt + Click to flag a tile.
+  </p>
+  
+  <div id="root">you guys suck</div>
+
+  <div class="modal">
+    <div class="modal-screen"></div>
+    <div class="modal-won"><span class="modal-close js-modal-close">&times</span>
+      You won! </br>
+      <button>Play Again</button>
+    </div>
+    <div class="modal-lose"><span class="modal-close js-modal-close">&times</span>
+      You lost!</br>
+        <button>Play Again</button>
+    </div>
+  </div>
+
+    <script src="../shared/js/jquery.js"></script>
+    <script>
+      $(function () {
+
+        $("body").on("click", ".js-modal-open", function (event) {
+          event.preventDefault();
+          $(".modal").addClass("is-open");
+        });
+
+        $("body").on("click", ".js-modal-close", function (event) {
+          event.preventDefault();
+          $(".modal").removeClass("is-open");
+        });
+      });
+    </script>
+</body>
+</html>
